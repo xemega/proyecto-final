@@ -1,5 +1,5 @@
 //
-//  ScVc.swift
+//  NavegaVC.swift
 //  proyectp-final
 //
 //  Created by César Méndez on 31/01/16.
@@ -8,24 +8,25 @@
 
 import UIKit
 
-class ScVc: UIViewController {
-
-    @IBOutlet weak var codigoqr: UIButton!
+class NavegaVC: UIViewController {
     
-    @IBOutlet weak var rutas: UIButton!
+    var pagina : String?
+
+    @IBOutlet weak var navegador: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         
-
+        let url = NSURL(string: pagina!)
+        let peticion = NSURLRequest(URL: url!)
+        
+        navegador.loadRequest(peticion)
+        
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        
-        
     }
     
 
